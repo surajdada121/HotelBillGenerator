@@ -1,0 +1,27 @@
+def generate_bill_template(username, gmail, nights, rate):
+    """This function generates a bill template for the given user"""
+    total = nights * rate
+    return f"""=============================================
+                   SUNSHINE HOTEL
+=============================================
+
+Name: {username}
+Email: {gmail}
+
+Number of Nights: {nights}
+Nightly Rate: ${rate:.2f}
+Total Amount: ${total:.2f}
+
+Thank you for choosing our hotel!
+"""
+# Get user input
+username = input("Please enter your name: ")
+gmail = input("Please enter your Gmail address: ")
+nights = int(input("Please enter the number of nights you stayed: "))
+rate = float(input("Please enter the nightly rate: "))
+
+# Generate bill template
+bill_template = generate_bill_template(username, gmail, nights, rate)
+
+# Print bill template
+print(bill_template)
